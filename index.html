@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    function computerPlay()
+    {
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log(randomNumber);
+        if(randomNumber <= 33)
+            return 'Rock';
+        else if(randomNumber > 33 && randomNumber <= 66)
+            return 'Paper';
+        else
+            return 'Scissors';
+    }
+  </script>
+</body>
+</html>
