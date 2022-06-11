@@ -5,6 +5,7 @@
   <title>Page Title</title>
 </head>
 <body>
+    <div id = "container"></div>
   <script>
     // Your JavaScript goes here!
     let playerWins = 0;
@@ -32,86 +33,115 @@
 
     function playRound(playerSelection, computerSelection) {
         // your code here!
-        playerSelection = playerSelection.toUpperCase(); 
-        console.log('Player: ' + playerSelection);
-        console.log('Computer: ' + computerSelection);
-        if(playerSelection == computerSelection)
+        // playerSelection = playerSelection.toUpperCase(); 
+        // console.log('Player: ' + playerSelection);
+        // console.log('Computer: ' + computerSelection);
+        // if(playerSelection == computerSelection)
+        // {
+        //     return 'You Tied!';
+        // }
+        // else
+        // {
+        //     if(playerSelection == 'ROCK')
+        //     {
+        //         if(computerSelection == 'PAPER')
+        //         {
+        //             computerWins++;
+        //             return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+        //         }
+        //         else if(computerSelection == 'SCISSORS')
+        //         {
+        //             playerWins++;
+        //             return `You Win! ${playerSelection} beats ${computerSelection}!`;
+        //         }
+        //     }
+        //     if(playerSelection == 'PAPER')
+        //     {
+        //         if(computerSelection == 'SCISSORS')
+        //         {
+        //             computerWins++;
+        //             return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+        //         }
+        //         else if(computerSelection == 'ROCK')
+        //         {
+        //             playerWins++;
+        //             return `You Win! ${playerSelection} beats ${computerSelection}!`;
+        //         }
+        //     }
+        //     if(playerSelection == 'SCISSORS')
+        //     {
+        //         if(computerSelection == 'ROCK')
+        //         {
+        //             computerWins++;
+        //             return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+        //         }
+        //         else if(computerSelection == 'PAPER')
+        //         {
+        //             playerWins++;
+        //             return `You Win! ${playerSelection} beats ${computerSelection}!`;
+        //         }
+        //     }
+        // }
+    }
+
+    // const playerSelection = "paper";
+    // const computerSelection = computerPlay();
+    // console.log(playRound(playerSelection, computerSelection));
+    
+    function game()
+    {
+        // for (let i = 0; i < 5; i++)
+        // {
+        //     // your code here
+        //     console.log(playRound(prompt("Choose Paper, Rock, or Scissors: "), computerPlay()));
+        //     console.log(`Player Wins: ${playerWins} ---- Computer Wins: ${computerWins}`);
+        // }
+
+        if(playerWins > computerWins)
         {
-            return 'You Tied!';
+            console.log(`You WON against the CPU! ${playerWins} to ${computerWins}`);
+        }
+        else if(playerWins < computerWins)
+        {
+            console.log(`You LOST against the CPU! ${playerWins} to ${computerWins}`);
         }
         else
         {
-            if(playerSelection == 'ROCK')
-            {
-                if(computerSelection == 'PAPER')
-                {
-                    computerWins++;
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                }
-                else if(computerSelection == 'SCISSORS')
-                {
-                    playerWins++;
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            }
-            if(playerSelection == 'PAPER')
-            {
-                if(computerSelection == 'SCISSORS')
-                {
-                    computerWins++;
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                }
-                else if(computerSelection == 'ROCK')
-                {
-                    playerWins++;
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            }
-            if(playerSelection == 'SCISSORS')
-            {
-                if(computerSelection == 'ROCK')
-                {
-                    computerWins++;
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                }
-                else if(computerSelection == 'PAPER')
-                {
-                    playerWins++;
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            }
+            console.log(`You tied with the CPU! ${playerWins} to ${computerWins}`);
         }
+
+        playerWins = 0;
+        computerWins = 0;
     }
 
-        // const playerSelection = "paper";
-        // const computerSelection = computerPlay();
-        // console.log(playRound(playerSelection, computerSelection));
-        
-        function game()
-        {
-            for (let i = 0; i < 5; i++)
-            {
-                // your code here
-                console.log(playRound(prompt("Choose Paper, Rock, or Scissors: "), computerPlay()));
-                console.log(`Player Wins: ${playerWins} ---- Computer Wins: ${computerWins}`);
-            }
+    const container = document.querySelector('#container');
 
-            if(playerWins > computerWins)
-            {
-                console.log(`You WON against the CPU! ${playerWins} to ${computerWins}`);
-            }
-            else if(playerWins < computerWins)
-            {
-                console.log(`You LOST against the CPU! ${playerWins} to ${computerWins}`);
-            }
-            else
-            {
-                console.log(`You tied with the CPU! ${playerWins} to ${computerWins}`);
-            }
+    console.log(container);
 
-            playerWins = 0;
-            computerWins = 0;
-        }
+    // Create Buttons for Rock, Paper, Scissors
+    let rockBtn = document.createElement("button"); 
+    rockBtn.classList.add('rockBtn');
+    rockBtn.textContent = 'Rock';
+
+    console.log(rockBtn);
+
+    let paperBtn = document.createElement("button");
+    paperBtn.classList.add('paperBtn');
+    paperBtn.textContent = "Paper";
+
+    console.log(paperBtn);
+
+    let scissorsBtn = document.createElement("button");
+    scissorsBtn.classList.add('scissorsBtn');
+    scissorsBtn.textContent = "Scissors";
+
+    console.log(scissorsBtn);
+    
+    container.appendChild(rockBtn);
+    container.appendChild(paperBtn);
+    container.appendChild(scissorsBtn);
+
   </script>
+
 </body>
 </html>
