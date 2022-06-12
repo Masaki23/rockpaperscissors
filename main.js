@@ -2,37 +2,29 @@
     let playerWins = 0;
     let computerWins = 0;
 
-    const container = document.querySelector('#container');
-    const result = document.querySelector('#result');
-    const gameState = document.querySelector('#gameState');
-    const playerChoice = document.querySelector('#playerChoice');
-    const computerChoice = document.querySelector('#computerChoice');
-    const gameTally = document.querySelector('#gameTally');
+    // const container = document.querySelector('#container');
 
-    // Create Buttons for Rock, Paper, Scissors
-    let rockBtn = document.createElement("button"); 
-    rockBtn.classList.add('rockBtn');
-    rockBtn.textContent = 'ROCK';
+    // // Create Buttons for Rock, Paper, Scissors
+    // let rockBtn = document.createElement("button"); 
+    // rockBtn.classList.add('rockBtn');
+    // rockBtn.textContent = 'ROCK';
 
-    let paperBtn = document.createElement("button");
-    paperBtn.classList.add('paperBtn');
-    paperBtn.textContent = "PAPER";
+    // let paperBtn = document.createElement("button");
+    // paperBtn.classList.add('paperBtn');
+    // paperBtn.textContent = "PAPER";
 
-    let scissorsBtn = document.createElement("button");
-    scissorsBtn.classList.add('scissorsBtn');
-    scissorsBtn.textContent = "SCISSORS";
+    // let scissorsBtn = document.createElement("button");
+    // scissorsBtn.classList.add('scissorsBtn');
+    // scissorsBtn.textContent = "SCISSORS";
     
-    container.appendChild(rockBtn);
-    container.appendChild(paperBtn);
-    container.appendChild(scissorsBtn);
+    // container.appendChild(rockBtn);
+    // container.appendChild(paperBtn);
+    // container.appendChild(scissorsBtn);
 
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach((button) => {
-        button.disabled = true;
-        // button.addEventListener('click', function (e) {
-        //     result.textContent = playRound(e.target.textContent, computerPlay());
-        // });
-    });
+    // const buttons = document.querySelectorAll('button');
+    // buttons.forEach((button) => {
+    //     button.disabled = true;
+    // });
 
     function startGame()
     {
@@ -44,12 +36,12 @@
         computerChoice.textContent = 'Computer: ' + 'NONE';
         result.textContent = 'Choose ROCK, PAPER, or SCISSORS';
 
-        buttons.forEach((button) => {
-            button.disabled = false;
-        });
+        // buttons.forEach((button) => {
+        //     button.disabled = false;
+        // });
     }
 
-    function computerPlay()
+    function computerMakeSelction()
     {
         let computerSelection = "";
         const randomNumber = Math.floor(Math.random() * 100) + 1;

@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    width: 1000px;
+    border-style: solid;
+    border-width: 4px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#header {
+    display: flex;
+    font-size: 72px;
+    font-weight: 800;
+    border-style: solid;
+    border-color: blueviolet;
+}
+
+#gameDisplay {
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    justify-content: space-between;
+}
+
+#playerPick {
+    display: flex;
+    border-style: solid;
+    border-color: aqua;
+}
+
+#versus {
+    display: flex;
+    border-style: solid;
+    border-color: orange;
+}
+
+#cpuPick {
+    display: flex;
+    border-style: solid;
+    border-color: greenyellow;
+}
