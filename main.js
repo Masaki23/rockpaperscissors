@@ -31,6 +31,11 @@
     const paperImage = document.createElement('img');
     const scissorsImage = document.createElement('img');
 
+    const winSFX = new Audio('sfx/win.wav');
+    const loseSFX = new Audio('sfx/lose.wav');
+    const startBtnSFX = new Audio('sfx/startButton.wav');
+    const rpsBtnSFX = new Audio('sfx/rpsButton.wav');
+
     let buttons = 0;
 
     const rpsImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
@@ -100,6 +105,9 @@
             if(button.className != 'startBtn')
             {
                 button.addEventListener('click', () => {
+                    rpsBtnSFX.pause();
+                    rpsBtnSFX.currentTime = 0;
+                    rpsBtnSFX.play();
                     statusDisplay.textContent = playRound(button.textContent, computerMakeSelction());
                 });
             }
@@ -111,6 +119,7 @@
         initControls();
 
         startBtn.addEventListener('click', () => {
+                startBtnSFX.play();
                 startGame();
             });
     }
@@ -138,9 +147,15 @@
         let winnerStr = '';
 
         if(playerWins == 5)
+        {
+            winSFX.play();
             winnerStr = 'YOU WON THE GAME!';
+        }
         else if (computerWins == 5)
+        {
+            loseSFX.play();
             winnerStr = 'YOU LOST THE GAME!';
+        }
 
         startGameControl.style.display = 'flex';
 
@@ -178,16 +193,16 @@
 
     function computerMakeSelction(playerSelection, computerSelection)
     {
-        const randomNumber = Math.floor(Math.random() * 100) + 1;
-        if(randomNumber <= 33)
+        const randomNumber = Math.floor(Math.random() * 3) + 1;
+        if(randomNumber == 1)
         {
             computerSelection = 'ROCK';
         }
-        else if(randomNumber > 33 && randomNumber <= 66)
+        else if(randomNumber == 2)
         {
             computerSelection = 'PAPER';
         }
-        else
+        else if(randomNumber == 3)
         {
             computerSelection = 'SCISSORS';
         }
